@@ -12,10 +12,12 @@ pipeline {
             ''' 
          }
      }
+    
     stage ('Check-Git-Secrets') {
       steps {
         sh 'docker pull gesellix/trufflehog'
-        sh 'docker run gesellix/trufflehog --json https://github.com/Bharath-Kandukoori/webapp.git>trufflehog'
+        sh 'docker run gesellix/trufflehog --json https://github.com/Bharath-Kandukoori/webapp.git > trufflehog'
+        sh 'cat trufflehog'
       }
     }
 
