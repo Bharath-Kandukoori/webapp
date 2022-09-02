@@ -21,6 +21,11 @@ pipeline {
       }
     }
 
+    stage ('Source Composition Analysis') {
+      steps {
+        
+      }
+    }
      stage ('Build') {
        steps {
        sh 'mvn clean package'
